@@ -10,7 +10,6 @@
 	//GLOBAL
 	$membreDAO = new MembreDAO();	
 
-
 	switch ($action) 
 	{
 		case 'insert':

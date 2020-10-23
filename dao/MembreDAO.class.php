@@ -60,7 +60,6 @@ Class MembreDAO
 						where PK_ID_Membre = ?';
 
 				$stmt = $this->cn->prepare($sql);
-
 				
 				$stmt->bindValue(1, $m->getNom() );
 				$stmt->bindValue(2, $m->getPrenom() );

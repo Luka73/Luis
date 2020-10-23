@@ -15,10 +15,10 @@
               <div class="modal-body">
                     <!-- FORM -->
                     <form id="formAjouterFilm" enctype="multipart/form-data">
-                            <div class="form-group">
+                           <!-- <div class="form-group">
                                 <label for="PK_ID_Film"></label>
                                 <input type="hidden" class="form-control" id="PK_ID_Film" name="PK_ID_Film" >
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="titre">Titre</label>
                                 <input type="text" class="form-control" id="titre" name="titre"

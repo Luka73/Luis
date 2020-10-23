@@ -5,13 +5,13 @@
 <?php include '../../includes/head.php'; ?>
 <?php include '../../includes/interfaceAdmin.php'; ?>
 
-
 <!--  TABLE  --> 
 <div class="container-fluid" style="width: 1200px;" >
     <div class="row mb-3">
         <div class="col-md-11">
             <h1>Liste des films <i class="fas fa-film"></i> </h1>
         </div>
+        
         <!-- THIS BUTTON CALL MODAL  -->
         <div class="col-md-1">
             <button type="button" id="btnNouveauFilm" nom="btnNouveauFilm" 
@@ -35,17 +35,16 @@
                     </tr>
                 </thead>
                 <tbody>
-
                     <tr>
                         <th>
                             <div id="sizeDivImage" >
-                                <a href="/w3images/nature.jpg" target="_blank">
-                                    <img class="img-thumbnail" src="../../img/avatar.jpg" alt="Nature" >
+                                <a href="#" target="_blank">
+                                    <img class="img-thumbnail" src="img/mon-oncle.jpeg" alt="Mon Oncle" >
                                 </a>
                             </div>
                         </th>
-                        <td>Anaconde</td>
-                        <td>Mike Steart</td>
+                        <td>Mon Oncle</td>
+                        <td>Mike Perks</td>
                         <td>Romance</td>
                         <td>120 minuts</td>
                         <td>$7</td>
@@ -59,12 +58,12 @@
                     <tr>
                         <th>
                             <div id="sizeDivImage" >
-                                <a href="/w3images/nature.jpg" target="_blank">
-                                    <img class="img-thumbnail" src="../../img/avatar.jpg" alt="Nature" >
+                                <a href="#" target="_blank">
+                                    <img class="img-thumbnail" src="img/transformers.jpeg" alt="Nature" >
                                 </a>
                             </div>
                         </th>
-                        <td>Anaconde</td>
+                        <td>Transformers</td>
                         <td>Mike Steart</td>
                         <td>Romance</td>
                         <td>120 minuts</td>
@@ -79,11 +78,31 @@
                         <th>
                             <div id="sizeDivImage" >
                                 <a href="/w3images/nature.jpg" target="_blank">
-                                    <img class="img-thumbnail" src="../../img/avatar.jpg" alt="Nature" >
+                                    <?php $img = "the-shining.jpeg"; ?>
+                                    <img class="img-thumbnail" src="img/<?php echo $img; ?>" alt="Nature" >
                                 </a>
                             </div>
                         </th>
-                        <td>Anaconde</td>
+                        <td>The Shining</td>
+                        <td>Mike Steart</td>
+                        <td>Romance</td>
+                        <td>120 minuts</td>
+                        <td>$7</td>
+                        <td>
+                            <button type="button" class="btn btn-primary"><i class="far fa-edit"></i> Editer</button>
+                            <button type="button" class="btn btn-warning">Details</button>
+                            <button type="button" class="btn btn-danger">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div id="sizeDivImage" >
+                                <a href="#" target="_blank">
+                                    <img class="img-thumbnail" src="img/suicide-squad.jpeg" alt="Nature" >
+                                </a>
+                            </div>
+                        </th>
+                        <td>Suicide Squad</td>
                         <td>Mike Steart</td>
                         <td>Romance</td>
                         <td>120 minuts</td>

@@ -6,13 +6,18 @@
 	include '../dao/FilmDAO.class.php';
 
 	extract($_POST);
+	//print_r($_POST);
+
+	$pochette = $_FILES['arquivo']['name'];
+	$location = $_SERVER['DOCUMENT_ROOT'] . "\\Film_2020_Git\\img\\" . $pochette;
+	$nomPochette=sha1($titre.time());
+
+	if(!move_uploaded_file($_FILES['arquivo']['tmp_name'], $location)){
+		error_r("Erro ao carregar imagem");
+	}
+
 	$filmDAO = new FilmDAO();	
 
-	// $pochette = $_POST['pochette'];
-	// alert($pochette);
-
-	//console.log($titre); //to test! var_dumping  print_r($data);
-	//console.log(''); pour html
 	switch ($action) 
 	{
 		case 'insert':

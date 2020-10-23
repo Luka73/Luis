@@ -5,19 +5,26 @@ var filmController ='../../controller/film.php';
 $('#btnEnregistrerFilm').click(()=> {
     
     //get all form filds  
-    var donnes   = $("#formAjouterFilm").serialize();
-    var action = 'action=insert';
-    alert(donnes);//to test
+    var donnes  = new FormData();
+    donnes.append("titre", $("#titre").val());
+    donnes.append("prix", $("#prix").val());
+    donnes.append("categorie", $("#categorie").val());
+    donnes.append("realisateur", $("#realisateur").val());
+    donnes.append("description", $("#description").val());
+    donnes.append("arquivo", $("#pochette")[0].files[0]);
+    donnes.append("action", "insert");
 
     //SEND TO CONTROLLER :Route, data, action
    $.ajax({
        method: 'POST',
        url:filmController,
-       data:action+'&'+donnes
+       data: donnes,
+       contentType : false,
+       processData: false
    }).done((msg)=>{
        //plugin confirm
        $.confirm({
-           title:'Bienvenue !',
+           title:'Bienvenue!',
             content: msg,
             buttons:{
                 OK:()=>{

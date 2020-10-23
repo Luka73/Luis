@@ -4,10 +4,10 @@ var membreController ='../../controller/membre.php';
 //SEND TO CONTROLLER :Route, data, action
 $('#btnEnregistrerMembre').click(()=> {
     //get all form filds  
-    var donnes   = $("#formAjouter").serialize();
+    var donnes = $("#formAjouter").serialize();
+    var nom = $("#nom").val();
     var action = 'action=insert';
-    alert(donnes);//to test
-
+    
    $.ajax({
        method: 'POST',
        url:membreController,
@@ -15,8 +15,8 @@ $('#btnEnregistrerMembre').click(()=> {
    }).done((msg)=>{
        //plugin confirm
        $.confirm({
-           title:'Bienvenue !',
-            content: msg,
+           title:'Bienvenue ' + nom + '!',
+            content: 'Result: ' + msg,
             buttons:{
                 OK:()=>{
                     $('#modal_DevenirMembre').modal('toggle');//close modal
