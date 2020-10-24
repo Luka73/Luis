@@ -9,11 +9,18 @@
 	//print_r($_POST);
 
 	$pochette = $_FILES['arquivo']['name'];
-	$location = $_SERVER['DOCUMENT_ROOT'] . "\\Film_2020_Git\\img\\" . $pochette;
+	$location = $_SERVER['DOCUMENT_ROOT'] . "\\Film_2020_Git\\img\\";
 	$nomPochette=sha1($titre.time());
 
-	if(!move_uploaded_file($_FILES['arquivo']['tmp_name'], $location)){
-		error_r("Erro ao carregar imagem");
+	if($_FILES['arquivo']['tmp_name'] !== ""){
+		$tmp = $_FILES['arquivo']['tmp_name'];
+		$fichier= $_FILES['arquivo']['name'];
+		$extension=strrchr($fichier,'.');
+		if(!@move_uploaded_file($tmp,$location.$nomPochette.$extension)){
+			error_r("Erro ao carregar imagem");
+		}
+		@unlink($tmp);
+		$pochette=$nomPochette.$extension;
 	}
 
 	$filmDAO = new FilmDAO();	
